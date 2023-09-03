@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="allFuncionalTests" verbose="1">
+    <suite-files>
+        <suite-file path="addAddressTest.xml"/>
+        <suite-file path="addNameTest.xml"/>
+        <suite-file path="changeEmojiTest.xml"/>
+    </suite-files>
+
+</suite>
