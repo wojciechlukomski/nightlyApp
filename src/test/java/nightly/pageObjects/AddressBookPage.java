@@ -19,6 +19,8 @@ public class AddressBookPage {
     private final SelenideElement emojiMonkeyFaceImg = $(By.xpath("//*[@id=\"app-container\"]/div/div[2]/div[5]/div/div/div/div/div/div/div/div/div[2]/div/div/img"));
     private final SelenideElement changeEmojiBtn = $(By.xpath("//*[@id=\"app-container\"]/div/div[2]/div[5]/div/div/div/div/div/div/div/div/div[2]/div/div"));
     private final SelenideElement changeEmojiAnimals = $(By.xpath("//*[@id=\"emojiPicker\"]/aside/div[1]/div[2]/button[3]"));
+    private final SelenideElement noAddressesYetField = $(By.xpath("//*[@id=\"app-container\"]/div/div[2]/div[5]/div/div/div/div/div/div/div/div/div[2]/div[3]/span"));
+    private final SelenideElement searchInput = $(By.xpath("//*[@id=\"app-container\"]/div/div[2]/div[5]/div/div/div/div/div/div/div/div/div[2]/div[2]/input"));
     
     public SelenideElement getError() {
         return error;
@@ -31,6 +33,10 @@ public class AddressBookPage {
     }
     public SelenideElement getNewContactOnList() {
         return newContactOnList;
+    }
+    
+    public SelenideElement getNoAddressesYetField() {
+        return noAddressesYetField;
     }
     
     public AddressBookPage fillUpNameAndAddress(String name, String address) {
@@ -58,6 +64,12 @@ public class AddressBookPage {
         changeEmojiAnimals.click();
         emojiMonkeyFace.click();
         
+        return this;
+    }
+    
+    public AddressBookPage enterSearchInput(String name) {
+        searchInput.clear();
+        searchInput.setValue(name);
         return this;
     }
 }

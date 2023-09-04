@@ -1,0 +1,21 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="emojiTest Suite" verbose="1">
+    <test name="emoji Tests">
+        <groups>
+        <run>
+            <include name="addContacts"/>
+            <include name="negative"/>
+
+        </run>
+    </groups>
+        <classes>
+            <class name="nightly.tests.SearchContactTest">
+                <methods>
+                    <include name=".*EmojiTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>
