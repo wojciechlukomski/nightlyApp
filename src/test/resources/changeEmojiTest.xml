@@ -3,7 +3,7 @@
 <suite name="emojiTest Suite" verbose="1">
     <test name="emoji Tests">
         <classes>
-            <class name="nightly.tests.NightlyFunctionalTests">
+            <class name="nightly.tests.AvatarEmojiTest">
                 <methods>
                     <include name=".*EmojiTest"/>
                 </methods>

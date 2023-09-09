@@ -72,6 +72,7 @@ public class SearchContactTest extends BaseTest {
     }
     
     @Test(priority = 7, groups = {"negative"})
+    
     public void valid3LastCharactersContactNameSearchTest() {
         addressBookPage.enterSearchInput("345");
         MatcherAssert.assertThat(addressBookPage.getNewContactOnList().getText(), equalTo("Ananas345"));

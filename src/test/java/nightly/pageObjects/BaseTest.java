@@ -9,6 +9,7 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
@@ -18,7 +19,12 @@ import static com.codeborne.selenide.WebDriverRunner.setWebDriver;
 
 public class BaseTest {
     
-    LoginPage loginPage = new LoginPage();
+    protected LoginPage loginPage = new LoginPage();
+    protected LoggedPage loggedPage = new LoggedPage();
+    protected final String falseValidAddress = "Hnt46bpHYefLzHPPuoGSVKb7otqaFxSwJoJE1M61Yrp6";
+    protected final String validName = "wojtek";
+    protected final String validAddress = "12345678901234567890seven99";
+    protected AddressBookPage addressBookPage = new AddressBookPage();
     
     @BeforeTest(alwaysRun = true)
     public void setUpBrowser() {
@@ -32,17 +38,17 @@ public class BaseTest {
         Selenide.closeWindow();
         Selenide.switchTo().window(0);
     
-//        Configuration.timeout = 8000;
         Configuration.assertionMode = AssertionMode.SOFT;
     
-        SelenideLogger.addListener("AllureSelenide", new AllureSelenide().screenshots(false).savePageSource(true));
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(true));
     
         loginPage.logIn();
+        
     }
     
     @AfterTest
     public void afterMethodSetUp() {
-//        WebDriverRunner.closeWebDriver();
+        Selenide.closeWebDriver();
     }
 }
 

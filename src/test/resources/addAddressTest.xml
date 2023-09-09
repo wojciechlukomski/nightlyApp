@@ -3,7 +3,7 @@
 <suite name="addressTest Suite" verbose="1">
     <test name="address Tests">
         <classes>
-            <class name="nightly.tests.NightlyFunctionalTests">
+            <class name="nightly.tests.AddContactFunctionalityTest">
                 <methods>
                     <include name=".*AddressTest"/>
                 </methods>

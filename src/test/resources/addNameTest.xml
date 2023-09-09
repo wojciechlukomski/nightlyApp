@@ -3,7 +3,7 @@
 <suite name="nameTest Suite" verbose="1">
     <test name="name Tests">
         <classes>
-            <class name="nightly.tests.NightlyFunctionalTests">
+            <class name="nightly.tests.AddContactFunctionalityTest">
                 <methods>
                     <include name=".*NameTest"/>
                 </methods>
